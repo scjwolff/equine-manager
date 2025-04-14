@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Horse - Step 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Horse - Step 3</h1>
+        <form action="/add_horse_step4" method="post">
+            <label>AM Hay (flakes):</label>
+            <input type="number" name="am_hay" required><br>
+
+            <label>PM Hay (flakes):</label>
+            <input type="number" name="pm_hay" required><br>
+
+            <label>Lunch Instructions (optional):</label>
+            <textarea name="lunch_hay" placeholder="e.g., 1 flake at noon, or leave blank"></textarea><br>
+
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>

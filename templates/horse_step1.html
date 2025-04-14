@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Horse - Step 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Horse - Step 1</h1>
+        <form action="/add_horse_step2" method="post">
+            <label for="name">Horse Name:</label>
+            <input type="text" name="name" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" required><br>
+
+            <label for="height">Height (in hands):</label>
+            <input type="number" step="0.1" name="height" required><br>
+
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>

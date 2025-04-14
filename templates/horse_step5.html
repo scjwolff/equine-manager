@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Horse - Step 5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Horse - Step 5</h1>
+        <form action="/add_horse_step6" method="post" enctype="multipart/form-data">
+            <label>Upload a picture of the horse:</label><br>
+            <input type="file" name="photo" accept="image/*"><br><br>
+
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Horse - Step 4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function copyAMtoPM() {
+            document.getElementById('pm_grain').value = document.getElementById('am_grain').value;
+            document.getElementById('pm_supplements').value = document.getElementById('am_supplements').value;
+            document.getElementById('pm_meds').value = document.getElementById('am_meds').value;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Horse - Step 4</h1>
+        <form action="/add_horse_step5" method="post">
+            <h2>AM Feed</h2>
+            <label>Grain:</label>
+            <input type="text" id="am_grain" name="am_grain"><br>
+
+            <label>Supplements:</label>
+            <input type="text" id="am_supplements" name="am_supplements"><br>
+
+            <label>Medications:</label>
+            <input type="text" id="am_meds" name="am_meds"><br>
+
+            <h2>PM Feed</h2>
+            <button type="button" onclick="copyAMtoPM()">Same as AM</button><br><br>
+
+            <label>Grain:</label>
+            <input type="text" id="pm_grain" name="pm_grain"><br>
+
+            <label>Supplements:</label>
+            <input type="text" id="pm_supplements" name="pm_supplements"><br>
+
+            <label>Medications:</label>
+            <input type="text" id="pm_meds" name="pm_meds"><br>
+
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>

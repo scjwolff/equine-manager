@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equine Manager</title>
+</head>
+<body>
+    <h1>Welcome to Equine Manager</h1>
+    <form action="/register" method="post">
+        <label>Name:</label><br>
+        <input type="text" name="username"><br>
+        <label>Role:</label><br>
+        <select name="role">
+            <option value="client">Client</option>
+            <option value="trainer">Trainer</option>
+            <option value="groom">Groom</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+        <input type="submit" value="Register">
+    </form>
+
+    <h2>Users:</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }} ({{ user.role }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/horses">Go to Horse Profiles</a>
+</body>
+</html>

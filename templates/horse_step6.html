@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Horse Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Review Horse Info</h1>
+        
+        <p><strong>Name:</strong> {{ horse.name }}</p>
+        <p><strong>Age:</strong> {{ horse.age }}</p>
+        <p><strong>Height:</strong> {{ horse.height }} hands</p>
+        <p><strong>Owner:</strong> {{ horse.owner }}</p>
+
+        <p><strong>AM Hay:</strong> {{ horse.am_hay }} flakes</p>
+        <p><strong>PM Hay:</strong> {{ horse.pm_hay }} flakes</p>
+        <p><strong>Lunch:</strong> {{ horse.lunch_hay }}</p>
+
+        <p><strong>AM Grain:</strong> {{ horse.am_grain }}</p>
+        <p><strong>AM Supplements:</strong> {{ horse.am_supplements }}</p>
+        <p><strong>AM Meds:</strong> {{ horse.am_meds }}</p>
+
+        <p><strong>PM Grain:</strong> {{ horse.pm_grain }}</p>
+        <p><strong>PM Supplements:</strong> {{ horse.pm_supplements }}</p>
+        <p><strong>PM Meds:</strong> {{ horse.pm_meds }}</p>
+
+        {% if horse.photo %}
+            <p><strong>Photo:</strong></p>
+            <img src="{{ url_for('uploaded_file', filename=horse.photo) }}" width="300">
+        {% endif %}
+
+        <form action="/save_horse" method="post">
+            <input type="submit" value="Save Horse">
+        </form>
+    </div>
+</body>
+</html>

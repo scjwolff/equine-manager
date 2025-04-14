@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit {{ horse.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Edit {{ horse.name }}</h1>
+        <form method="post">
+            <label>Name:</label>
+            <input type="text" name="name" value="{{ horse.name }}"><br>
+
+            <label>Age:</label>
+            <input type="number" name="age" value="{{ horse.age }}"><br>
+
+            <label>Height (hands):</label>
+            <input type="number" name="height" value="{{ horse.height }}"><br>
+
+            <label>AM Hay:</label>
+            <input type="number" name="am_hay" value="{{ horse.am_hay }}"><br>
+
+            <label>PM Hay:</label>
+            <input type="number" name="pm_hay" value="{{ horse.pm_hay }}"><br>
+
+            <label>Lunch:</label>
+            <input type="text" name="lunch_hay" value="{{ horse.lunch_hay }}"><br>
+
+            <label>AM Grain:</label>
+            <input type="text" name="am_grain" value="{{ horse.am_grain }}"><br>
+
+            <label>AM Supplements:</label>
+            <input type="text" name="am_supplements" value="{{ horse.am_supplements }}"><br>
+
+            <label>AM Meds:</label>
+            <input type="text" name="am_meds" value="{{ horse.am_meds }}"><br>
+
+            <label>PM Grain:</label>
+            <input type="text" name="pm_grain" value="{{ horse.pm_grain }}"><br>
+
+            <label>PM Supplements:</label>
+            <input type="text" name="pm_supplements" value="{{ horse.pm_supplements }}"><br>
+
+            <label>PM Meds:</label>
+            <input type="text" name="pm_meds" value="{{ horse.pm_meds }}"><br>
+
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+</body>
+</html>

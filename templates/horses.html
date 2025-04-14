@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horse Profiles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .horse-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        .horse-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Horses</h1>
+    <a href="/add_horse_step1">➕ Add a New Horse</a>
+    <hr>
+
+    {% for horse in horses %}
+    <div class="horse-card">
+        {% if horse.photo %}
+            <img src="{{ url_for('uploaded_file', filename=horse.photo) }}" alt="{{ horse.name }}">
+        {% endif %}
+        <h2>{{ horse.name }}</h2>
+        <a href="/horse/{{ loop.index0 }}">View Profile</a>
+    </div>
+    {% endfor %}
+</body>
+</html>

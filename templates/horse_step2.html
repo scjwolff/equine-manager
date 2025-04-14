@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Horse - Step 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Horse - Step 2</h1>
+        <form action="/add_horse_step3" method="post">
+            <label>Select an existing owner:</label><br>
+            <select name="owner">
+                {% for user in owners %}
+                    <option value="{{ user.username }}">{{ user.username }} ({{ user.role }})</option>
+                {% endfor %}
+            </select><br>
+
+            <p>or add a new owner:</p>
+            <label>New Owner Name:</label>
+            <input type="text" name="new_owner"><br>
+
+            <label>New Owner Role:</label>
+            <select name="new_role">
+                <option value="">-- Select Role --</option>
+                <option value="client">Client</option>
+                <option value="trainer">Trainer</option>
+            </select><br>
+
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>
